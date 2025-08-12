@@ -18,7 +18,7 @@ const About = () => {
               <CardContent className="p-8">
                 <img 
                   src={profileImage} 
-                  alt="Alex Johnson - Full-Stack Developer"
+                  alt="Taha - Full-Stack Developer"
                   className="w-full max-w-md mx-auto rounded-lg shadow-lg"
                 />
               </CardContent>
@@ -26,34 +26,40 @@ const About = () => {
           </div>
           
           <div className="space-y-6 animate-slide-up">
-            <h3 className="text-2xl font-bold text-primary mb-4">Full-Stack Developer</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">Full-Stack Developer & Network Engineer</h3>
             <p className="text-muted-foreground leading-relaxed">
-              With over 5 years of experience in web development, I specialize in creating 
-              modern, responsive applications using cutting-edge technologies. My passion lies 
-              in building user-centric solutions that make a real impact.
+              I'm Taha, a full-stack developer and network engineer student based in Algeria, with over 3 years 
+              of experience in web development and freelance work. I specialize in building fast, secure API servers 
+              and scalable full-stack web applications.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I've worked with startups and established companies, helping them transform 
-              their ideas into robust digital products. My expertise spans both frontend 
-              and backend development, with a keen eye for design and user experience.
+              My strong foundation in networking enhances my ability to create robust and secure digital solutions. 
+              Proficient in Express, PHP (Laravel), JavaScript, and React, I seamlessly integrate backend logic 
+              with intuitive frontend interfaces. My development workflow is powered by tools like Git and Docker, 
+              ensuring version control, scalability, and deployment efficiency.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              As a freelancer, I've successfully delivered a wide range of projects—from e-commerce platforms to 
+              SaaS websites to applications for data analysis—each tailored to meet unique business needs with 
+              precision and performance in mind.
             </p>
             
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                <div className="text-3xl font-bold text-primary mb-2">15+</div>
                 <div className="text-muted-foreground">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">5+</div>
+                <div className="text-3xl font-bold text-primary mb-2">3+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">30+</div>
+                <div className="text-3xl font-bold text-primary mb-2">10+</div>
                 <div className="text-muted-foreground">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-muted-foreground">Support</div>
+                <div className="text-3xl font-bold text-primary mb-2">80+</div>
+                <div className="text-muted-foreground">API Endpoints</div>
               </div>
             </div>
           </div>

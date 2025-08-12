@@ -5,44 +5,44 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Next.js", level: 88 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Vue.js", level: 80 },
+        { name: "React", level: 92 },
+        { name: "Next.js", level: 90 },
+        { name: "JavaScript", level: 95 },
+        { name: "TypeScript", level: 85 },
+        { name: "HTML/CSS", level: 90 },
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 88 },
-        { name: "MongoDB", level: 82 },
-        { name: "GraphQL", level: 80 },
+        { name: "Laravel", level: 95 },
+        { name: "PHP", level: 90 },
+        { name: "Express.js", level: 88 },
+        { name: "Node.js", level: 85 },
+        { name: "API Development", level: 95 },
       ]
     },
     {
-      title: "Tools & Others",
+      title: "Database & Tools",
       skills: [
-        { name: "Git", level: 95 },
+        { name: "PostgreSQL", level: 90 },
+        { name: "MySQL", level: 88 },
         { name: "Docker", level: 85 },
-        { name: "AWS", level: 80 },
-        { name: "Figma", level: 88 },
-        { name: "Jest", level: 85 },
+        { name: "Git", level: 92 },
+        { name: "Java", level: 80 },
       ]
     }
   ];
 
   const technologies = [
+    { name: "Laravel", icon: "🔧" },
     { name: "React", icon: "⚛️" },
-    { name: "TypeScript", icon: "🔷" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Python", icon: "🐍" },
+    { name: "Next.js", icon: "▲" },
+    { name: "PHP", icon: "🐘" },
+    { name: "Express", icon: "🚀" },
     { name: "PostgreSQL", icon: "🐘" },
-    { name: "MongoDB", icon: "🍃" },
     { name: "Docker", icon: "🐳" },
-    { name: "AWS", icon: "☁️" },
+    { name: "Git", icon: "📂" },
   ];
 
   return (

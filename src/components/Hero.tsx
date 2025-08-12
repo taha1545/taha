@@ -24,14 +24,14 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center animate-fade-in">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-            Hi, I'm <span className="text-primary">Alex Johnson</span>
+            Hi, I'm <span className="text-primary">Taha</span>
           </h1>
           <h2 className="text-2xl md:text-3xl mb-8 text-muted-foreground">
-            Full-Stack Developer & UI/UX Designer
+            Full-Stack Developer & Network Engineer
           </h2>
           <p className="text-lg md:text-xl mb-12 text-muted-foreground max-w-2xl mx-auto">
-            I craft beautiful, functional web applications with modern technologies. 
-            Passionate about creating seamless user experiences and scalable solutions.
+            Based in Algeria with over 3 years of experience building fast, secure API servers and scalable full-stack web applications. 
+            My networking background enhances my ability to create robust and secure digital solutions.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">

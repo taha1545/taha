@@ -6,50 +6,50 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind"],
+      title: "Algerian E-Commerce API",
+      description: "Developed a robust RESTful API for a modern e-commerce platform using Laravel 12. Features include authentication with Sanctum, Google OAuth, real-time notifications, SATIM payment gateway integration, and comprehensive admin analytics with 80+ endpoints.",
+      technologies: ["Laravel 12", "PostgreSQL", "Redis", "Sanctum", "SATIM SDK"],
       image: "🛍️",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, file sharing, and team collaboration features.",
-      technologies: ["Next.js", "Socket.io", "MongoDB", "TypeScript"],
-      image: "📋",
+      title: "Psycho Assistance Mobile App",
+      description: "A mobile solution for mental health clinics with dual backend modules: a social system for psychologists to share experiences and a patient folder management system. Includes PDF generation, real-time syncing, and role-based access control.",
+      technologies: ["Laravel", "PostgreSQL", "Pusher", "PDF Generator"],
+      image: "🧠",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts, charts, and weather alerts using external APIs.",
-      technologies: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-      image: "🌤️",
+      title: "AfrahDZ Event Services API",
+      description: "Complete backend API for a mobile app managing event services like wedding halls and DJs. Features JWT authentication, Firebase notifications, SATIM payments, coin-based rewards, and complex announcement filtering with location-based suggestions.",
+      technologies: ["PHP", "MySQL", "Firebase", "SATIM", "Docker"],
+      image: "🎉",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Social Media Analytics",
-      description: "An analytics platform for social media metrics with data visualization, automated reporting, and insights generation.",
-      technologies: ["React", "D3.js", "Python", "Django", "MySQL"],
+      title: "Bazooka Restaurant API",
+      description: "Smart ordering system for Algerian fast-food chain connecting clients, delivery staff, and admins. Real-time order tracking with WebSockets, menu management, analytics dashboard, and role-based access for seamless restaurant operations.",
+      technologies: ["Laravel", "Pusher", "WebSockets", "Google OAuth"],
+      image: "🍔",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "ISP Client Data Analyzer",
+      description: "Java desktop application for an Algerian ISP to analyze monthly CSV client data. Features automatic data import, advanced filtering by customer details, real-time calculations, and export functionality, replacing manual Excel workflows.",
+      technologies: ["Java", "Swing", "OpenCSV", "Maven"],
       image: "📊",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Real Estate Platform",
-      description: "A modern real estate platform with property listings, virtual tours, and mortgage calculator functionality.",
-      technologies: ["Next.js", "Prisma", "PostgreSQL", "Mapbox"],
-      image: "🏠",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Learning Management System",
-      description: "An educational platform with course management, video streaming, quizzes, and progress tracking for students and instructors.",
-      technologies: ["React", "Node.js", "MongoDB", "AWS S3"],
-      image: "🎓",
+      title: "Network Infrastructure Projects",
+      description: "Various networking projects leveraging my network engineering background to create robust, secure, and scalable backend solutions. Focus on API security, database optimization, and system architecture design.",
+      technologies: ["Network Security", "System Architecture", "API Design"],
+      image: "🌐",
       liveUrl: "#",
       githubUrl: "#"
     }
