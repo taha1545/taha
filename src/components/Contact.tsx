@@ -10,10 +10,11 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: ""
   });
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,15 +24,43 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setLoading(true);
+    //
+    try {
+      const res = await fetch(
+        "https://message-api-kdh6.onrender.com/api/contacts",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        }
+      );
+      //
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+      //
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon."
+      });
+      //
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      //
+    } catch (err: any) {
+      toast({
+        title: "Error",
+        description: err.message || "Something went wrong",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section id="contact" className="py-20 bg-background">
@@ -44,43 +73,42 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
           <div className="space-y-8 animate-slide-up">
             <div>
               <h3 className="text-2xl font-bold text-primary mb-6">Let's Connect</h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. 
-                Whether you're a company looking to hire, or you're a fellow developer wanting to collaborate, 
+                I'm always interested in hearing about new opportunities and exciting projects.
+                Whether you're a company looking to hire, or you're a fellow developer wanting to collaborate,
                 I'd love to hear from you. Based in Algeria and open to remote work worldwide.
               </p>
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-skill-bg border-primary/20">
+              <Card className="bg-transparent border-primary/20">
                 <CardContent className="p-6 flex items-center space-x-4">
                   <div className="bg-primary text-primary-foreground p-3 rounded-lg">
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">taha.dev@email.com</p>
+                    <p className="text-muted-foreground">mansouritaha675@gmail.com</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-skill-bg border-primary/20">
+              <Card className="bg-transparent border-primary/20">
                 <CardContent className="p-6 flex items-center space-x-4">
                   <div className="bg-primary text-primary-foreground p-3 rounded-lg">
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">+213 XXX XXX XXX</p>
+                    <p className="text-muted-foreground">+213 673 442 786</p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-skill-bg border-primary/20">
+              <Card className="bg-transparent border-primary/20">
                 <CardContent className="p-6 flex items-center space-x-4">
                   <div className="bg-primary text-primary-foreground p-3 rounded-lg">
                     <MapPin className="h-6 w-6" />
@@ -94,8 +122,8 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <Card className="animate-slide-up bg-card border-primary/20">
+
+          <Card className="animate-slide-up bg-background pt-10  border-primary/20">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">Send Message</CardTitle>
             </CardHeader>
@@ -124,18 +152,18 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <Input
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
+                    name="phone"
+                    placeholder="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     required
                     className="bg-input border-border focus:border-primary"
                   />
                 </div>
-                
+
                 <div>
                   <Textarea
                     name="message"
@@ -147,9 +175,9 @@ const Contact = () => {
                     className="bg-input border-border focus:border-primary resize-none"
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full hero-gradient text-white hover:opacity-90 transition-opacity py-3 text-lg"
                 >
                   Send Message
@@ -159,6 +187,32 @@ const Contact = () => {
           </Card>
         </div>
       </div>
+      { loading && (
+        <div className="fixed md:px-5 md:top-20 top-3 right-3 flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full shadow-lg animate-slide-up z-50">
+          <svg
+            className="animate-spin h-5 w-5 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            ></path>
+          </svg>
+          <span>Sending...</span>
+        </div>
+
+      )}
     </section>
   );
 };
