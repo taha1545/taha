@@ -29,20 +29,6 @@ const Contact = () => {
     setLoading(true);
     //
     try {
-      const res = await fetch(
-        "https://message-api-kdh6.onrender.com/api/contacts",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData)
-        }
-      );
-      //
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-      //
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon."
