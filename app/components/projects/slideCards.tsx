@@ -122,7 +122,7 @@ export function SlideCard({ project }: SlideCardProps) {
                             className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8.5 text-sm font-medium text-white/80 transition-all duration-200 hover:border-white/20 hover:bg-white/8 hover:text-white"
                         >
                             <Image
-                                src="/skills/git.svg"
+                                src="/skills/Git.svg"
                                 alt="Git"
                                 width={16}
                                 height={16}
