@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Loader2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -55,12 +56,26 @@ export function Contact({
   agreementText = "I agree to the privacy policy",
   buttonText = "Send Message",
 }: ContactProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    //
+    e.preventDefault();
+    setIsSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setIsSent(true);
+    setTimeout(() => {
+      setIsSent(false);
+    }, 2000);
+  };
+
   return (
     <section
       id="contact"
       className="relative isolate w-full overflow-hidden py-20 sm:py-24 "
     >
-      {/* ── Background blobs — stronger, more visible ── */}
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -94,7 +109,6 @@ export function Contact({
           viewport={{ once: true, margin: "-100px" }}
           className="mx-auto max-w-2xl lg:max-w-3xl"
         >
-          {/* Header */}
           <div className="text-center">
             <motion.span
               variants={fadeUp}
@@ -121,12 +135,11 @@ export function Contact({
             </motion.h2>
           </div>
 
-          {/* Form Card */}
           <motion.div
             variants={fadeUp}
             className="mt-12 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-6 backdrop-blur-sm sm:p-8 lg:mt-16 lg:p-10"
           >
-            <form className="grid gap-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="grid gap-5" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="grid gap-2">
                   <Label
@@ -201,17 +214,33 @@ export function Contact({
 
               <button
                 type="submit"
+                disabled={isSubmitting || isSent}
                 className={cn(
                   "group mt-2 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl",
                   "bg-primary px-8 text-sm font-semibold text-white",
                   "shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_14px_rgba(234,88,12,0.25)]",
                   "transition-all duration-200 hover:bg-orange-500",
                   "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_6px_20px_rgba(234,88,12,0.35)]",
-                  "active:scale-[0.96]"
+                  "active:scale-[0.96]",
+                  "disabled:cursor-not-allowed disabled:opacity-70"
                 )}
               >
-                {buttonText}
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                {isSent ? (
+                  <>
+                    <Check className="h-4 w-4" />
+                    Sent!
+                  </>
+                ) : isSubmitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    {buttonText}
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>

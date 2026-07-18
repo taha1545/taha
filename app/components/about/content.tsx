@@ -63,7 +63,7 @@ export default function AboutContent() {
         {/* Body */}
         <motion.div
           variants={fadeUp}
-          className="mx-auto mt-10 max-w-2xl space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base lg:space-y-10 lg:mt-16  md:text-lg lg:mx-0 lg:max-w-7xl"
+          className="mx-auto mt-10 max-w-2xl space-y-6 text-sm leading-relaxed text-muted-foreground sm:text-base lg:space-y-12 lg:mt-16  md:text-lg lg:mx-0 lg:max-w-7xl"
         >
           <p>{`
             I'm Taha Mansouri, a Network & Cloud Engineering student passionate about
@@ -98,7 +98,7 @@ export default function AboutContent() {
 
         <motion.div
           variants={fadeUp}
-          className="mt-10 grid w-[95%] mx-auto grid-cols-3 gap-3 sm:gap-6 md:mt-16"
+          className="mt-10 grid w-[98%] mx-auto grid-cols-3 gap-3 sm:gap-5 md:mt-24"
         >
           {stats.map(({ label, value }) => (
             <div

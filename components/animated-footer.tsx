@@ -14,7 +14,7 @@ interface AnimatedFooterProps {
 
 export function AnimatedFooter({
   headingLines = ["Sensipav"],
-  background = "#180e08",
+  background = "#0d0701",
   textColor = "#ffffff",
   revealOnScroll = true,
   className,

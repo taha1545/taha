@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import SkillCard from "./card";
 
 const container: Variants = {
     hidden: { opacity: 0 },
@@ -52,25 +53,7 @@ const columnLayout = [
     [17],
 ];
 
-function SkillCard({ skill }: { skill: (typeof skills)[0] }) {
-    return (
-        <div className="group flex flex-col items-center gap-2">
-            {/* Card container — larger and responsive */}
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.04] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06),0_1px_2px_rgba(0,0,0,0.3)] backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.07] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_0_20px_rgba(234,88,12,0.08)] sm:h-20 sm:w-20 lg:h-24 lg:w-24">
-                {/* Icon image — bigger and responsive */}
-                <img
-                    src={`/skills/${skill.file}`}
-                    alt={skill.name}
-                    className="h-8 w-8 object-contain transition-all duration-300 group-hover:scale-110 sm:h-10 sm:w-10 lg:h-12 lg:w-12"
-                />
-            </div>
-            {/* Label — slightly larger too */}
-            <span className="text-xs font-medium text-white/40 transition-colors duration-300 group-hover:text-white/70 sm:text-sm">
-                {skill.name}
-            </span>
-        </div>
-    );
-}
+
 
 export default function SkillsContent() {
     return (

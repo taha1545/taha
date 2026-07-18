@@ -98,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ type: "spring", damping: 22, stiffness: 180, delay: 0.05 }}
             className={cn(
-                "fixed top-2 left-0 right-0 z-50 h-16 max-w-7xl  rounded-4xl mx-auto  transition-all duration-300",
+                "fixed top-3 left-0 right-0 z-50 h-16 max-w-7xl  rounded-4xl mx-auto  transition-all duration-300",
                 scrolled
                     ? "border border-white/6 bg-background/40 backdrop-blur-xs"
                     : "border border-white/5 bg-background/20 "
@@ -174,7 +174,7 @@ export default function Navbar() {
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
                 <SheetContent
                     side="right"
-                    className="flex w-[min(100vw-2rem,20rem)] flex-col border-white/10 bg-[#1f140d]/95 p-0 backdrop-blur-md"
+                    className="flex w-[min(100vw-2rem,20rem)] flex-col border-white/10 bg-[#1f140d]/60 p-0 backdrop-blur-md"
                 >
                     <SheetTitle className="sr-only">Navigation menu</SheetTitle>
 

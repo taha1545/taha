@@ -11,7 +11,7 @@ export default function Hero() {
       <style>{fontStyle}</style>
       <section
         id="home"
-        className="relative flex min-h-screen w-full items-center justify-start overflow-hidden"
+        className="relative flex min-h-screen w-full items-center justify-start overflow-hidden border-b border-white/30"
       >
         <HeroBackground />
         <div className="relative z-10  pt-10 px-4 mx-auto max-w-7xl w-full sm:px-12 xl:pt-12 xl:px-6">
