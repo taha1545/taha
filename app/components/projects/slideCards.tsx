@@ -1,4 +1,3 @@
-// slideCards.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -17,12 +16,12 @@ const item = {
         y: 0,
         transition: {
             delay: 0.15 + i * 0.08,
-            type: "spring",
+            type: "spring" as const,
             stiffness: 120,
             damping: 20,
         },
     }),
-};
+} as const;
 
 export function SlideCard({ project }: SlideCardProps) {
     return (
@@ -120,7 +119,7 @@ export function SlideCard({ project }: SlideCardProps) {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8.5  text-sm font-medium text-white/80 transition-all duration-200 hover:border-white/20 hover:bg-white/8 hover:text-white"
+                            className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8.5 text-sm font-medium text-white/80 transition-all duration-200 hover:border-white/20 hover:bg-white/8 hover:text-white"
                         >
                             <Image
                                 src="/skills/git.svg"
