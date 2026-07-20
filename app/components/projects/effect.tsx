@@ -28,7 +28,7 @@ export function Effect({ projects }: EffectProps) {
 
   useEffect(() => {
     if (!isAutoPlaying || count <= 1) return;
-    const t = setInterval(() => paginate(1), 3000);
+    const t = setInterval(() => paginate(1), 20000);
     return () => clearInterval(t);
   }, [isAutoPlaying, paginate, count]);
 
